@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
@@ -135,10 +136,28 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    var i;
+    var length = dynamicArray.length;
+    var output = 1;
+    var message;
+    var numbers = [];
 
+    if (length === 0 || length === 1) {
+        output = multiply(output, dynamicArray[0]);
+        message = ('The number ' + dynamicArray[0] + ' has a product of ' + output + '.');
+        return[output, message];
+    }
+
+    for (i = 0; i < dynamicArray.length; i++){
+        output = multiply(output, dynamicArray[i])[0];
+        numbers.push(dynamicArray[i]);
+    }
+
+    message = ('The numbers ' + numbers + ' have a product of ' + output + '.');
+    return[output, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
