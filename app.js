@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
@@ -135,7 +136,32 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    var i = 0;
+    var length = dynamicArray.length;
+    var output = [];
+    var message;
+    var numbers;
 
+    if (length === 0 || length === 1) {
+        return['Please input at least two numbers for this function.'];
+    }
+
+    output[0] = multiply(dynamicArray[0], dynamicArray[1])[0];
+    numbers = (dynamicArray[0] + ',' + dynamicArray[1]);
+
+    if (length === 2) {
+        message = ('The numbers ' + dynamicArray[0] + ',' + dynamicArray[1] + ' have a product of ' + output[0] + '.');
+        return[output[0], message];
+    }
+
+    for (i = 2; i < dynamicArray.length; i++){
+        output.push(multiply(output[0], dynamicArray[i])[0]);
+        numbers = (numbers + ',' + dynamicArray[i]);
+        var product = output[i - 1];
+    }
+
+    message = ('The numbers ' + numbers + ' have a product of ' + product);
+    return[product, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
