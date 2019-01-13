@@ -143,7 +143,7 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     var numbers = [];
 
     if (length === 0 || length === 1) {
-        output = multiply(output, dynamicArray[0]);
+        output = multiply(output, dynamicArray[0])[0];
         message = ('The number ' + dynamicArray[0] + ' has a product of ' + output + '.');
         return[output, message];
     }
