@@ -142,11 +142,11 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     var message;
     var numbers = [];
 
-    if (length === 0 || length === 1) {
-        output = multiply(output, dynamicArray[0])[0];
-        message = ('The number ' + dynamicArray[0] + ' has a product of ' + output + '.');
-        return[output, message];
-    }
+    // if (length === 0 || length === 1) {
+    //     output = multiply(output, dynamicArray[0])[0];
+    //     message = ('The number ' + dynamicArray[0] + ' has a product of ' + output + '.');
+    //     return[output, message];
+    // }
 
     for (i = 0; i < dynamicArray.length; i++){
         output = multiply(output, dynamicArray[i])[0];
